@@ -18,11 +18,6 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-<<<<<<< HEAD
-    url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('registration.urls')),
-=======
     url(r'^admin', admin.site.urls),
->>>>>>> 31209a8b6a738fc5d20fa783938ed24ee8eddf63
     url(r'^', include('userprofiles.urls', namespace='userprofiles'),)
 ]
