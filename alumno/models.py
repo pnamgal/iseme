@@ -7,3 +7,4 @@ Class Alumno(models.Model):
     apellido = models.CharField(max_length=30)
     direccion = models.CharField(max_length=30)
     dni = models.IntegerField()
+    mail = models.EmailField(max_length=50)
