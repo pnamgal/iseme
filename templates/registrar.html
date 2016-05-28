@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block registrar_content %}
+
+<h1>Registrar</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+    	<input type="hidden" name="action" value="signup">
+
+    	<strong>Usuario </strong> <input type="text" name="username"><br>
+        <br>
+    	<strong>Contraseña </strong> <input type="text" name="password"><br>
+        <br>
+        <strong>Nombre </strong> <input type="text" name="nombre"><br>
+        <br>
+        <strong>Apellido </strong>  <input type="text" name="apellido"><br>
+        <br>
+        <strong>Dirección</strong>  <input type="text" name="direccion"><br>
+        <br>
+        <strong>Teléfono </strong> <input type="text" name="telefono"><br>
+        <br>
+        <strong>Dni </strong>  <input type="text" name="dni"><br>
+        <br>
+        <strong>E-mail </strong>  <input type="text" name="email"><br>
+        <br>
+        <strong>Localidad </strong>  <input type="text" name="localidad"><br>
+        <br> 
+
+    	<button type="submit">Registrar</button>
+    </form>
+
+    {% endblock %}

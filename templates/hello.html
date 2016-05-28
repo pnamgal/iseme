@@ -3,11 +3,13 @@
 {% block content %}
 	<h1>¡Bienvenido {{ user.username }}!</h1>
 
+
 	
 
 	<h2>
 		{% if user.is_authenticated %}
-		  
+		    <p>La última vez que lo vimos por aquí fue: {{user.last_login}} </p>
+	        <p>Eres miembro desde: {{user.date_joined}}</p>
 		    <a href="{% url "userprofiles:logout" %}">Cerrar Sesión</a>
 			
 
