@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
-    'userprofiles',
+    'userprofiles.apps.UserprofilesConfig',
+    'carreras.apps.CarrerasConfig',
+    'alumnos.apps.AlumnosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
