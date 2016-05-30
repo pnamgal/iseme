@@ -13,5 +13,18 @@
     	<button type="submit">Iniciar</button>
     </form>
 
+    <h1>Registrar</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="signup">
+
+        <strong>Usuario </strong> <input type="text" name="username"><br>
+        <br>
+        <strong>Contraseña </strong> <input type="text" name="password"><br>
+        <br>
+
+        <button type="submit">Registrar</button>
+    </form>
+
 
 {% endblock %}

@@ -3,16 +3,17 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 
+#------------------------------------------------------
+#Control de validación del login
 def authentication(request):
     if request.method == 'POST':
         action = request.POST.get('action', None)
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
         
-
-        #if action == 'signup':
-          #  user = User.objects.create_user(username=username, password=password)
-         #   user.save()
+        if action == 'signup':
+           user = User.objects.create_user(username=username, password=password)
+           user.save()   
         if action == 'login':
             user = authenticate(username=username, password=password)
             login(request, user)
@@ -21,5 +22,28 @@ def authentication(request):
     context = {}
     return render(request, 'login.html', context)
 
+#------------------------------------------------------
+#Control validación para el registro
+def verificar(request):
+    if request.method == 'POST':
+        action = request.POST.get('action', None)
+        username = request.POST.get('username', None)
+        password = request.POST.get('password', None)  
+
+        if action == 'signup':
+           user = User.objects.create_user(username=username, password=password)
+           user.save()   
+        return redirect('/')
+
+    context = {}
+    return render(request, 'login.html', context)
+#------------------------------------------------------
+#Muestra el template hello.html
 def hello(request):
 	return render(request, 'hello.html', {})
+
+#------------------------------------------------------
+#Muestra el template registrar.html
+def registrar(request):
+    return render(request, 'registrar.html', {})
+

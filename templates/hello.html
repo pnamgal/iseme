@@ -10,10 +10,13 @@
 		{% if user.is_authenticated %}
 		    <p>La última vez que lo vimos por aquí fue: {{user.last_login}} </p>
 	        <p>Eres miembro desde: {{user.date_joined}}</p>
-		    <a href="{% url "userprofiles:logout" %}">Cerrar Sesión</a>
+	        <a href="{% url "userprofiles:registrar" %}">Registrar</a> <br>
+            <a href="{% url "userprofiles:logout" %}">Cerrar Sesión</a>
+		   
 			
 
 		{% else %}
+
 			<a href="{% url "userprofiles:authentication" %}">Iniciar Sesión</a>
 		{% endif %}
 	</h2>
