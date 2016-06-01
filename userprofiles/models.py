@@ -16,5 +16,5 @@ class Persona(models.Model):
 
 class Alumno(Persona):
     carrera = models.CharField(max_length=30)
-    año = models.CharField(max_length=15)
+    edad = models.CharField(max_length=15)
 

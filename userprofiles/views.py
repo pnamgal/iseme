@@ -4,33 +4,33 @@ from django.contrib.auth import authenticate, login
 
 
 #------------------------------------------------------
-#Control de validación del login
+#Control de validacion del login
 def authentication(request):
     if request.method == 'POST':
         action = request.POST.get('action', None)
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
-    
+
         if action == 'login':
             user = authenticate(username=username, password=password)
             login(request, user)
         return redirect('/')
-            
+
     context = {}
     return render(request, 'login.html', context)
 
 #------------------------------------------------------
-#Control validación para el registro
+#Control validacion para el registro
 def verificar(request):
     if request.method == 'POST':
         action = request.POST.get('action', None)
         username = request.POST.get('username', None)
-        password = request.POST.get('password', None)  
-        
-        
+        password = request.POST.get('password', None)
+
+
         if action == 'signup':
            user = User.objects.create_user(username=username, password=password)
-           user.save()   
+           user.save()
         return redirect('/')
 
     context = {}
