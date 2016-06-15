@@ -45,3 +45,4 @@ def hello(request):
 def registrar(request):
     return render(request, 'registrar.html', {})
 
+#------------------------------------------------------

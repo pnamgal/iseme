@@ -18,3 +18,4 @@ class Alumno(Persona):
     carrera = models.CharField(max_length=30)
     año = models.CharField(max_length=15)
 
+#-------------------------------------------------
